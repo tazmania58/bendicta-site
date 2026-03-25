@@ -1411,39 +1411,26 @@ a.contato-value:hover {
     text-align: center;
 }
 
-.footer-copy {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-}
-
-.footer-legal {
+.footer-inline {
     font-size: 0.7rem;
     color: var(--text-muted);
-    opacity: 0.6;
+    line-height: 1.8;
 }
 
-.footer-dev {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
-    opacity: 0.5;
-    transition: opacity var(--transition-fast);
-}
-
-.footer-dev:hover {
-    opacity: 0.8;
-}
-
-.footer-dev a {
+.footer-inline a {
     color: var(--gold);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition-fast);
 }
 
-.footer-dev a:hover {
+.footer-inline a:hover {
     color: var(--gold-light);
+}
+
+.footer-sep {
+    margin: 0 0.5rem;
+    opacity: 0.3;
 }
 
 /* ---- AGE GATE ---- */
