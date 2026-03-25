@@ -1526,10 +1526,11 @@ a.contato-value:hover {
 
 /* ---- Nav Logo Image ---- */
 .nav-logo-img {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 4px;
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold);
     transition: transform var(--transition-fast);
 }
 
@@ -1538,7 +1539,8 @@ a.contato-value:hover {
 }
 
 .navbar.scrolled .nav-logo-img {
-    height: 40px;
+    height: 36px;
+    width: 36px;
 }
 
 /* ---- Hero Split Layout ---- */
@@ -1755,6 +1757,8 @@ a.contato-value:hover {
     .hero-split {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
+        padding-top: 5rem;
     }
 
     .hero-split .hero-content {
@@ -1771,7 +1775,7 @@ a.contato-value:hover {
 
     .hero-product {
         flex: none;
-        max-width: 300px;
+        max-width: 220px;
     }
 
     .specs-grid {
@@ -1916,6 +1920,33 @@ a.contato-value:hover {
     }
 
     .hero-product {
-        max-width: 240px;
+        max-width: 180px;
+    }
+
+    .hero-split {
+        gap: 1.5rem;
+        padding-top: 4.5rem;
+    }
+
+    .title-word {
+        font-size: 3rem !important;
+    }
+
+    .title-accent {
+        font-size: 1rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-logo-img {
+        height: 36px;
+        width: 36px;
     }
 }
