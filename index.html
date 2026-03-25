@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bendicta Cerveja | Puro Malte desde 2009</title>
+    <meta name="description" content="Bendicta Cerveja Puro Malte - Nascida artesanal na Moóca, São Paulo. Dois maltes, quatro lúpulos, uma experiência única.">
+    <meta name="keywords" content="bendicta, cerveja, puro malte, artesanal, pilsen, lager, moóca, são paulo">
+    <meta property="og:title" content="Bendicta Cerveja | Puro Malte desde 2009">
+    <meta property="og:description" content="Nascida artesanal na Moóca. Dois maltes, quatro lúpulos, uma experiência única.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bendicta.com.br">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">BENDICTA</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Partículas de bolhas flutuantes (canvas) -->
+    <canvas id="bubbles-canvas"></canvas>
+
+    <!-- Navegação -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">BENDICTA</span>
+                <span class="logo-sub">CERVEJA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Início</a></li>
+                <li><a href="#historia" class="nav-link" data-section="historia">História</a></li>
+                <li><a href="#cerveja" class="nav-link" data-section="cerveja">A Cerveja</a></li>
+                <li><a href="#ingredientes" class="nav-link" data-section="ingredientes">Ingredientes</a></li>
+                <li><a href="#experiencia" class="nav-link" data-section="experiencia">Experiência</a></li>
+                <li><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contato" class="btn-nav">Onde Encontrar</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="#hero" class="mobile-link">Início</a></li>
+            <li><a href="#historia" class="mobile-link">História</a></li>
+            <li><a href="#cerveja" class="mobile-link">A Cerveja</a></li>
+            <li><a href="#ingredientes" class="mobile-link">Ingredientes</a></li>
+            <li><a href="#experiencia" class="mobile-link">Experiência</a></li>
+            <li><a href="#contato" class="mobile-link">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-layers">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-grain"></div>
+        </div>
+
+        <!-- Elementos flutuantes de cerveja -->
+        <div class="floating-elements">
+            <div class="floating-hop float-1">
+                <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="40" cy="55" rx="28" ry="35" fill="rgba(178,143,62,0.15)" stroke="rgba(178,143,62,0.3)" stroke-width="1"/>
+                    <ellipse cx="40" cy="45" rx="22" ry="28" fill="rgba(178,143,62,0.1)" stroke="rgba(178,143,62,0.2)" stroke-width="1"/>
+                    <ellipse cx="40" cy="38" rx="15" ry="20" fill="rgba(178,143,62,0.08)" stroke="rgba(178,143,62,0.15)" stroke-width="1"/>
+                    <line x1="40" y1="15" x2="40" y2="0" stroke="rgba(178,143,62,0.3)" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="floating-hop float-2">
+                <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="40" cy="55" rx="28" ry="35" fill="rgba(178,143,62,0.12)" stroke="rgba(178,143,62,0.25)" stroke-width="1"/>
+                    <ellipse cx="40" cy="45" rx="22" ry="28" fill="rgba(178,143,62,0.08)" stroke="rgba(178,143,62,0.18)" stroke-width="1"/>
+                    <ellipse cx="40" cy="38" rx="15" ry="20" fill="rgba(178,143,62,0.06)" stroke="rgba(178,143,62,0.12)" stroke-width="1"/>
+                    <line x1="40" y1="15" x2="40" y2="0" stroke="rgba(178,143,62,0.25)" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="floating-hop float-3">
+                <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="40" cy="55" rx="28" ry="35" fill="rgba(178,143,62,0.1)" stroke="rgba(178,143,62,0.2)" stroke-width="1"/>
+                    <ellipse cx="40" cy="45" rx="22" ry="28" fill="rgba(178,143,62,0.07)" stroke="rgba(178,143,62,0.15)" stroke-width="1"/>
+                </svg>
+            </div>
+            <div class="floating-grain float-4">
+                <svg viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="20" cy="40" rx="12" ry="32" fill="rgba(218,185,98,0.12)" stroke="rgba(218,185,98,0.25)" stroke-width="1"/>
+                    <line x1="20" y1="8" x2="20" y2="72" stroke="rgba(218,185,98,0.15)" stroke-width="0.5"/>
+                </svg>
+            </div>
+            <div class="floating-grain float-5">
+                <svg viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="20" cy="40" rx="12" ry="32" fill="rgba(218,185,98,0.1)" stroke="rgba(218,185,98,0.2)" stroke-width="1"/>
+                    <line x1="20" y1="8" x2="20" y2="72" stroke="rgba(218,185,98,0.12)" stroke-width="0.5"/>
+                </svg>
+            </div>
+            <div class="floating-bubble float-6"></div>
+            <div class="floating-bubble float-7"></div>
+            <div class="floating-bubble float-8"></div>
+            <div class="floating-bubble float-9"></div>
+            <div class="floating-bubble float-10"></div>
+            <div class="floating-ring float-11">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" stroke="rgba(178,143,62,0.1)" stroke-width="1" fill="none"/>
+                    <circle cx="60" cy="60" r="40" stroke="rgba(178,143,62,0.06)" stroke-width="0.5" fill="none"/>
+                </svg>
+            </div>
+            <div class="floating-ring float-12">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" stroke="rgba(178,143,62,0.08)" stroke-width="1" fill="none"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="badge-line"></span>
+                <span class="badge-text">DESDE 2009</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line reveal-up" style="--delay: 0.1s">
+                    <span class="title-word">BENDICTA</span>
+                </span>
+                <span class="title-line reveal-up" style="--delay: 0.25s">
+                    <span class="title-word title-accent">CERVEJA</span>
+                </span>
+            </h1>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.4s">Puro Malte</p>
+            <p class="hero-description reveal-up" style="--delay: 0.55s">
+                Dois maltes. Quatro lúpulos. Uma receita nascida na Moóca,<br>
+                aperfeiçoada em confrarias, consagrada em cada gole.
+            </p>
+            <div class="hero-actions reveal-up" style="--delay: 0.7s">
+                <a href="#historia" class="btn btn-primary">
+                    <span class="btn-text">Conheça Nossa História</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#cerveja" class="btn btn-outline">
+                    <span class="btn-text">A Cerveja</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+
+        <!-- Borda decorativa dourada -->
+        <div class="hero-bottom-ornament">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,30 Q360,0 720,30 Q1080,60 1440,30" fill="none" stroke="rgba(178,143,62,0.3)" stroke-width="1"/>
+                <path d="M0,35 Q360,5 720,35 Q1080,65 1440,35" fill="none" stroke="rgba(178,143,62,0.15)" stroke-width="0.5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA SECTION -->
+    <section id="historia" class="section section-historia">
+        <div class="section-ornament-top">
+            <div class="ornament-line"></div>
+            <div class="ornament-diamond"></div>
+            <div class="ornament-line"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">NOSSA HISTÓRIA</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Da Moóca<br><span class="text-gold">Para o Mundo</span>
+                </h2>
+                <div class="section-divider reveal-up" style="--delay: 0.2s">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M12 2L14.5 9.5H22L16 14L18.5 21.5L12 17L5.5 21.5L8 14L2 9.5H9.5L12 2Z"/>
+                        </svg>
+                    </span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <span class="marker-year">2009</span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="card-glow"></div>
+                        <h3 class="timeline-title">O Início</h3>
+                        <p class="timeline-text">
+                            Tudo começou no Bar e Empório Bendicta, no coração da Moóca, São Paulo.
+                            Com um equipamento de apenas 70 litros, nasceu uma cerveja que encantava
+                            todos que a provavam.
+                        </p>
+                        <div class="timeline-detail">
+                            <span class="detail-icon">🍺</span>
+                            <span class="detail-text">70 litros por lote</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-item-right reveal-right">
+                    <div class="timeline-marker">
+                        <span class="marker-year">Confraria</span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="card-glow"></div>
+                        <h3 class="timeline-title">A Receita Perfeita</h3>
+                        <p class="timeline-text">
+                            Distribuída para amigos, confrades e clientes do bar, a receita foi sendo
+                            aperfeiçoada com as dicas da confraria. Cada sugestão moldou o sabor que
+                            conhecemos hoje.
+                        </p>
+                        <div class="timeline-detail">
+                            <span class="detail-icon">👥</span>
+                            <span class="detail-text">Refinada pela comunidade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker">
+                        <span class="marker-year">Hoje</span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="card-glow"></div>
+                        <h3 class="timeline-title">Escala Industrial</h3>
+                        <p class="timeline-text">
+                            Numa conversa de boteco, decidimos que mais pessoas mereciam apreciar a Bendicta.
+                            Hoje produzida em grandes lotes, mantém os mesmos ingredientes e a receita
+                            artesanal de antigamente.
+                        </p>
+                        <div class="timeline-detail">
+                            <span class="detail-icon">🏭</span>
+                            <span class="detail-text">600ml e 300ml</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A CERVEJA SECTION -->
+    <section id="cerveja" class="section section-cerveja">
+        <div class="cerveja-bg-glow"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">FICHA TÉCNICA</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    A <span class="text-gold">Cerveja</span>
+                </h2>
+                <div class="section-divider reveal-up" style="--delay: 0.2s">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                        </svg>
+                    </span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card glass-card reveal-up" style="--delay: 0s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <rect x="14" y="8" width="20" height="32" rx="4"/>
+                            <line x1="14" y1="16" x2="34" y2="16"/>
+                            <path d="M34 20 Q40 24 34 28"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Estilo</h3>
+                    <p class="spec-value">Lager Pilsen</p>
+                    <p class="spec-detail">Tradicional, clara e leve</p>
+                </div>
+
+                <div class="spec-card glass-card reveal-up" style="--delay: 0.1s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <ellipse cx="24" cy="28" rx="10" ry="14"/>
+                            <line x1="24" y1="14" x2="24" y2="6"/>
+                            <path d="M20 8 Q24 4 28 8"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Maltes</h3>
+                    <p class="spec-value">Pilsner & Carahell</p>
+                    <p class="spec-detail">Notas sutis de caramelo. Dourado intenso</p>
+                </div>
+
+                <div class="spec-card glass-card reveal-up" style="--delay: 0.2s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="16"/>
+                            <circle cx="24" cy="24" r="8"/>
+                            <circle cx="24" cy="24" r="2" fill="rgba(178,143,62,0.9)"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Lúpulos</h3>
+                    <p class="spec-value">4 Variedades</p>
+                    <p class="spec-detail">Cascade, Nugget, Sladek, Hersbrucker</p>
+                </div>
+
+                <div class="spec-card glass-card reveal-up" style="--delay: 0.3s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <path d="M24 6 L24 42"/>
+                            <path d="M16 14 L24 6 L32 14"/>
+                            <path d="M12 24 L36 24"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Corpo</h3>
+                    <p class="spec-value">11,2% EP</p>
+                    <p class="spec-detail">Encorpada e com boa drinkability</p>
+                </div>
+
+                <div class="spec-card glass-card reveal-up" style="--delay: 0.4s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <path d="M8 40 Q16 8 24 24 Q32 40 40 8"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Amargor</h3>
+                    <p class="spec-value">17 IBUs</p>
+                    <p class="spec-detail">Destacado e alto para o estilo</p>
+                </div>
+
+                <div class="spec-card glass-card reveal-up" style="--delay: 0.5s">
+                    <div class="spec-icon-wrap">
+                        <div class="spec-icon-bg"></div>
+                        <svg class="spec-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                            <path d="M24 4 L24 44"/>
+                            <path d="M16 12 L32 12"/>
+                            <path d="M18 20 L30 20"/>
+                            <circle cx="24" cy="36" r="8"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-label">Álcool</h3>
+                    <p class="spec-value">4,8% ABV</p>
+                    <p class="spec-detail">Levemente superior à média das Pilsens</p>
+                </div>
+            </div>
+
+            <!-- Frase destaque -->
+            <div class="cerveja-quote reveal-up">
+                <blockquote class="quote-text">
+                    "Continua e sempre será uma cerveja puro malte, com ótimo amargor e muito aromática."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTES SECTION -->
+    <section id="ingredientes" class="section section-ingredientes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">INGREDIENTES</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    A Arte dos<br><span class="text-gold">Ingredientes</span>
+                </h2>
+                <div class="section-divider reveal-up" style="--delay: 0.2s">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <!-- Maltes -->
+            <div class="ingredients-row">
+                <div class="ingredients-category reveal-left">
+                    <h3 class="category-title">
+                        <span class="category-number">01</span>
+                        Maltes
+                    </h3>
+                    <p class="category-desc">A base de tudo. Dois maltes selecionados que conferem à Bendicta seu dourado intenso e as sutis notas de caramelo.</p>
+                </div>
+                <div class="ingredients-cards">
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(178,143,62,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(178,143,62,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(178,143,62,0.9)" font-size="12" font-family="Montserrat">P</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Pilsner</h4>
+                        <p class="ingredient-desc">Malte base clássico. Confere corpo leve e cor dourada clara.</p>
+                    </div>
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0.15s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(218,185,98,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(218,185,98,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(218,185,98,0.9)" font-size="12" font-family="Montserrat">C</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Carahell<sup>&reg;</sup></h4>
+                        <p class="ingredient-desc">Malte especial. Adiciona notas de caramelo e intensifica o dourado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lúpulos -->
+            <div class="ingredients-row ingredients-row-reverse">
+                <div class="ingredients-category reveal-right">
+                    <h3 class="category-title">
+                        <span class="category-number">02</span>
+                        Lúpulos
+                    </h3>
+                    <p class="category-desc">Quatro variedades cuidadosamente selecionadas. São eles que dão à Bendicta seus aromas florais e cítricos, e o amargor marcante.</p>
+                </div>
+                <div class="ingredients-cards ingredients-cards-4">
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle hop-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(120,160,80,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(120,160,80,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(120,160,80,0.9)" font-size="10" font-family="Montserrat">01</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Cascade</h4>
+                        <p class="ingredient-desc">Floral e cítrico</p>
+                    </div>
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0.1s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle hop-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(120,160,80,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(120,160,80,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(120,160,80,0.9)" font-size="10" font-family="Montserrat">02</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Nugget</h4>
+                        <p class="ingredient-desc">Herbáceo e amargo</p>
+                    </div>
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0.2s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle hop-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(120,160,80,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(120,160,80,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(120,160,80,0.9)" font-size="10" font-family="Montserrat">03</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Sladek</h4>
+                        <p class="ingredient-desc">Suave e especiado</p>
+                    </div>
+                    <div class="ingredient-card glass-card reveal-up" style="--delay: 0.3s">
+                        <div class="ingredient-visual">
+                            <div class="ingredient-circle hop-circle">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(120,160,80,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+                                    <circle cx="50" cy="50" r="35" fill="rgba(120,160,80,0.08)"/>
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="rgba(120,160,80,0.9)" font-size="10" font-family="Montserrat">04</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h4 class="ingredient-name">Hersbrucker</h4>
+                        <p class="ingredient-desc">Frutado e delicado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÊNCIA / HARMONIZAÇÃO SECTION -->
+    <section id="experiencia" class="section section-experiencia">
+        <div class="experiencia-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">HARMONIZAÇÃO</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    A Experiência<br><span class="text-gold">Completa</span>
+                </h2>
+                <div class="section-divider reveal-up" style="--delay: 0.2s">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M18 8h1a4 4 0 010 8h-1"/>
+                            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+                            <line x1="6" y1="1" x2="6" y2="4"/>
+                            <line x1="10" y1="1" x2="10" y2="4"/>
+                            <line x1="14" y1="1" x2="14" y2="4"/>
+                        </svg>
+                    </span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-subtitle reveal-up" style="--delay: 0.3s">
+                    A Bendicta harmoniza perfeitamente com diversas experiências gastronômicas
+                </p>
+            </div>
+
+            <div class="harmony-grid">
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <circle cx="32" cy="36" r="22"/>
+                            <ellipse cx="32" cy="34" rx="18" ry="6"/>
+                            <circle cx="26" cy="32" r="3"/>
+                            <circle cx="36" cy="30" r="2"/>
+                            <circle cx="30" cy="38" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Pizzas</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.08s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <ellipse cx="32" cy="40" rx="24" ry="8"/>
+                            <path d="M12 36 Q20 20 32 28 Q44 20 52 36"/>
+                            <path d="M18 32 Q24 24 32 30"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Saladas</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.16s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M16 44 Q16 28 32 28 Q48 28 48 44"/>
+                            <line x1="12" y1="44" x2="52" y2="44"/>
+                            <path d="M20 28 Q20 16 32 16 Q44 16 44 28"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Massas</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.24s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M16 32 Q24 20 32 32 Q40 44 48 32"/>
+                            <path d="M12 36 Q20 24 28 36"/>
+                            <circle cx="44" cy="28" r="6"/>
+                            <path d="M48 36 L52 42"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Frutos do Mar</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.32s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <rect x="16" y="20" width="32" height="24" rx="4"/>
+                            <line x1="16" y1="28" x2="48" y2="28"/>
+                            <path d="M24 28 L24 44"/>
+                            <path d="M40 28 L40 44"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Queijos</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.40s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M20 44 Q12 36 20 28 Q28 20 36 28"/>
+                            <path d="M36 28 Q44 20 48 28 Q52 36 44 44"/>
+                            <line x1="16" y1="44" x2="48" y2="44"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Peixes</h4>
+                </div>
+                <div class="harmony-card glass-card reveal-up" style="--delay: 0.48s">
+                    <div class="harmony-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M20 40 Q16 32 20 24 L32 16 L44 24 Q48 32 44 40 Z"/>
+                            <line x1="28" y1="40" x2="28" y2="48"/>
+                            <line x1="36" y1="40" x2="36" y2="48"/>
+                            <line x1="24" y1="48" x2="40" y2="48"/>
+                        </svg>
+                    </div>
+                    <h4 class="harmony-name">Carnes Leves</h4>
+                </div>
+            </div>
+
+            <!-- Aroma e Sabor -->
+            <div class="sensory-row reveal-up">
+                <div class="sensory-card glass-card">
+                    <h4 class="sensory-title">Aroma</h4>
+                    <p class="sensory-desc">Muito aromática. Aromas florais e cítricos provenientes das quatro variedades de lúpulo.</p>
+                    <div class="sensory-meter">
+                        <div class="meter-fill" data-value="85"></div>
+                    </div>
+                </div>
+                <div class="sensory-card glass-card">
+                    <h4 class="sensory-title">Sabor</h4>
+                    <p class="sensory-desc">Notas sutis de caramelo com amargor destacado e equilibrado. Boa drinkability.</p>
+                    <div class="sensory-meter">
+                        <div class="meter-fill" data-value="78"></div>
+                    </div>
+                </div>
+                <div class="sensory-card glass-card">
+                    <h4 class="sensory-title">Amargor</h4>
+                    <p class="sensory-desc">17 IBUs. Alto para o estilo Pilsen, confere personalidade única à cerveja.</p>
+                    <div class="sensory-meter">
+                        <div class="meter-fill" data-value="65"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO SECTION -->
+    <section id="contato" class="section section-contato">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">CONTATO</span>
+                <h2 class="section-title reveal-up" style="--delay: 0.1s">
+                    Fale<br><span class="text-gold">Conosco</span>
+                </h2>
+                <div class="section-divider reveal-up" style="--delay: 0.2s">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <div class="contato-grid">
+                <div class="contato-info reveal-left">
+                    <div class="contato-item glass-card">
+                        <div class="contato-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="contato-label">E-mail</h4>
+                            <a href="mailto:contato@bendicta.com.br" class="contato-value">contato@bendicta.com.br</a>
+                        </div>
+                    </div>
+                    <div class="contato-item glass-card">
+                        <div class="contato-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="contato-label">Website</h4>
+                            <span class="contato-value">www.bendicta.com.br</span>
+                        </div>
+                    </div>
+                    <div class="contato-item glass-card">
+                        <div class="contato-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.9)" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="contato-label">Origem</h4>
+                            <span class="contato-value">Moóca, São Paulo - SP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contato-form-wrap reveal-right">
+                    <form class="contato-form glass-card" id="contact-form">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-input" required>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <select id="assunto" name="assunto" class="form-input form-select" required>
+                                <option value="">Selecione</option>
+                                <option value="distribuicao">Distribuição</option>
+                                <option value="parceria">Parceria Comercial</option>
+                                <option value="eventos">Eventos</option>
+                                <option value="imprensa">Imprensa</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-input form-textarea" rows="4" required></textarea>
+                            <span class="form-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Enviar Mensagem</span>
+                            <span class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-ornament">
+            <div class="ornament-line"></div>
+            <div class="ornament-diamond"></div>
+            <div class="ornament-line"></div>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">BENDICTA</span>
+                    <span class="footer-logo-sub">CERVEJA</span>
+                    <p class="footer-tagline">Puro Malte desde 2009</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Início</a>
+                    <a href="#historia">História</a>
+                    <a href="#cerveja">A Cerveja</a>
+                    <a href="#ingredientes">Ingredientes</a>
+                    <a href="#experiencia">Experiência</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 Bendicta Cerveja. Todos os direitos reservados.</p>
+                <p class="footer-legal">Beba com moderação. Venda proibida para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Age Gate Modal -->
+    <div id="age-gate" class="age-gate">
+        <div class="age-gate-content glass-card">
+            <div class="age-gate-logo">BENDICTA</div>
+            <div class="age-gate-sub">CERVEJA</div>
+            <div class="age-gate-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(178,143,62,0.8)" stroke-width="1.5">
+                        <path d="M12 2L14.5 9.5H22L16 14L18.5 21.5L12 17L5.5 21.5L8 14L2 9.5H9.5L12 2Z"/>
+                    </svg>
+                </span>
+                <span class="divider-line"></span>
+            </div>
+            <p class="age-gate-text">Você tem 18 anos ou mais?</p>
+            <div class="age-gate-actions">
+                <button class="btn btn-primary age-btn-yes" id="age-yes">
+                    <span class="btn-text">Sim, tenho 18+</span>
+                </button>
+                <button class="btn btn-outline age-btn-no" id="age-no">
+                    <span class="btn-text">Não</span>
+                </button>
+            </div>
+            <p class="age-gate-legal">Beba com moderação. Venda proibida para menores de 18 anos.</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

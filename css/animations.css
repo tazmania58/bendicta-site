@@ -1,0 +1,345 @@
+/* ============================================
+   BENDICTA — Animations & Transitions
+   ============================================ */
+
+/* ---- Reveal Animations ---- */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    transition-delay: var(--delay, 0s);
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal-up.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ---- Floating Animations ---- */
+.float-1 {
+    animation: floatSlow 12s ease-in-out infinite;
+}
+
+.float-2 {
+    animation: floatMedium 10s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.float-3 {
+    animation: floatSlow 14s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.float-4 {
+    animation: floatFast 8s ease-in-out infinite;
+    animation-delay: -1s;
+}
+
+.float-5 {
+    animation: floatMedium 11s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.float-6 {
+    animation: bubbleFloat 6s ease-in-out infinite;
+}
+
+.float-7 {
+    animation: bubbleFloat 8s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.float-8 {
+    animation: bubbleFloat 7s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.float-9 {
+    animation: bubbleFloat 5s ease-in-out infinite;
+    animation-delay: -1s;
+}
+
+.float-10 {
+    animation: bubbleFloat 9s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.float-11 {
+    animation: floatRotate 20s linear infinite;
+}
+
+.float-12 {
+    animation: floatRotate 25s linear infinite reverse;
+}
+
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-5px) rotate(-3deg);
+    }
+    75% {
+        transform: translateY(-25px) translateX(5px) rotate(2deg);
+    }
+}
+
+@keyframes floatMedium {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-15px) translateX(8px) rotate(4deg);
+    }
+    66% {
+        transform: translateY(-30px) translateX(-8px) rotate(-4deg);
+    }
+}
+
+@keyframes floatFast {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(12px);
+    }
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+@keyframes floatRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---- Parallax subtle ---- */
+[data-parallax] {
+    will-change: transform;
+}
+
+/* ---- Hover glow on cards ---- */
+.glass-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(178, 143, 62, 0.04), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.glass-card:hover::after {
+    opacity: 1;
+}
+
+/* ---- Stagger animation for grids ---- */
+.specs-grid .spec-card,
+.harmony-grid .harmony-card,
+.ingredients-cards .ingredient-card {
+    will-change: transform, opacity;
+}
+
+/* ---- Smooth parallax on hero ---- */
+.hero-content {
+    will-change: transform, opacity;
+}
+
+/* ---- Meter fill animation ---- */
+@keyframes meterFill {
+    from { width: 0; }
+}
+
+/* ---- Nav link underline animation ---- */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s var(--ease-out);
+    opacity: 0.5;
+}
+
+.nav-link.active::before {
+    transform: translateX(-50%) scale(1);
+}
+
+/* ---- Button ripple effect ---- */
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+
+.btn:active::after {
+    transform: scale(2.5);
+    opacity: 0;
+    transition: 0s;
+}
+
+/* ---- Timeline card hover ---- */
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    transition: height 0.5s var(--ease-out);
+}
+
+.timeline-card:hover::before {
+    height: 100%;
+}
+
+/* ---- Gold text shimmer ---- */
+@keyframes goldShimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.text-gold {
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold), var(--gold-light), var(--gold-dark));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 6s linear infinite;
+}
+
+/* ---- Spec card counter animation ---- */
+.spec-card .spec-value {
+    transition: color var(--transition-fast);
+}
+
+.spec-card:hover .spec-value {
+    color: var(--gold);
+}
+
+/* ---- Ingredient circle rotation ---- */
+.ingredient-circle svg {
+    transition: transform 0.6s var(--ease-out);
+}
+
+.ingredient-card:hover .ingredient-circle svg {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.hop-circle svg {
+    transition: transform 0.6s var(--ease-out);
+}
+
+.ingredient-card:hover .hop-circle svg {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* ---- Scroll-triggered line drawing ---- */
+.section-ornament-top .ornament-line {
+    transform: scaleX(0);
+    transition: transform 1s var(--ease-out) 0.2s;
+}
+
+.section-ornament-top.revealed .ornament-line {
+    transform: scaleX(1);
+}
+
+.section-ornament-top .ornament-diamond {
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.5s var(--ease-out) 0.6s;
+}
+
+.section-ornament-top.revealed .ornament-diamond {
+    transform: rotate(45deg) scale(1);
+}
+
+/* ---- Contato icon bounce ---- */
+.contato-icon {
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.contato-item:hover .contato-icon {
+    transform: scale(1.1);
+    border-color: var(--gold);
+}
+
+/* ---- Form focus label ---- */
+.form-group:focus-within .form-label {
+    color: var(--gold);
+}
+
+/* ---- Age gate animation ---- */
+.age-gate-content {
+    animation: ageGateIn 0.6s var(--ease-out) both;
+}
+
+@keyframes ageGateIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-up,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1;
+        transform: none;
+    }
+}
