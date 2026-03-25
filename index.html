@@ -736,14 +736,18 @@
 
                 <div class="contato-form-wrap reveal-right">
                     <form class="contato-form glass-card" id="contact-form">
+                        <!-- Honeypot anti-bot -->
+                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-input" required>
+                            <input type="text" id="nome" name="nome" class="form-input" required maxlength="100">
                             <span class="form-line"></span>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
+                            <input type="email" id="email" name="email" class="form-input" required maxlength="254">
                             <span class="form-line"></span>
                         </div>
                         <div class="form-group">
@@ -760,7 +764,7 @@
                         </div>
                         <div class="form-group">
                             <label for="mensagem" class="form-label">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-input form-textarea" rows="4" required></textarea>
+                            <textarea id="mensagem" name="mensagem" class="form-input form-textarea" rows="4" required maxlength="2000"></textarea>
                             <span class="form-line"></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
@@ -876,7 +880,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-inline">&copy; 2026 Bendicta Cerveja. Todos os direitos reservados. <span class="footer-sep">|</span> Beba com moderação. Venda proibida para menores de 18 anos. <span class="footer-sep">|</span> Site desenvolvido por <a href="https://wa.me/5571992952152?text=Ol%C3%A1!%20Gostei%20do%20site%20que%20voc%C3%AA%20criou%20para%20a%20Bendicta!" target="_blank" rel="noopener">Iuri Ribeiro Silva</a></p>
+                <p class="footer-inline">&copy; 2026 Bendicta Cerveja. Todos os direitos reservados. <span class="footer-sep">|</span> Beba com moderação. Venda proibida para menores de 18 anos. <span class="footer-sep">|</span> Site desenvolvido por <a href="https://wa.me/5571992952152?text=Ol%C3%A1!%20Gostei%20do%20site%20que%20voc%C3%AA%20criou%20para%20a%20Bendicta!" target="_blank" rel="noopener noreferrer">Iuri Ribeiro Silva</a></p>
             </div>
         </div>
     </footer>
@@ -907,6 +911,17 @@
             <p class="age-gate-legal">Beba com moderação. Venda proibida para menores de 18 anos.</p>
         </div>
     </div>
+
+    <!-- NoScript fallback -->
+    <noscript>
+        <style>
+            body > *:not(noscript) { display: none !important; }
+        </style>
+        <div style="text-align:center;padding:4rem 2rem;color:#F0EDE6;background:#0A0B10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:sans-serif;">
+            <h1 style="color:#B28F3E;font-size:2rem;margin-bottom:1rem;">BENDICTA CERVEJA</h1>
+            <p>Ative o JavaScript no seu navegador para acessar este site.</p>
+        </div>
+    </noscript>
 
     <script src="js/main.js"></script>
 </body>

@@ -124,13 +124,16 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href && /^#[a-zA-Z0-9_-]+$/.test(href)) {
+                const target = document.getElementById(href.substring(1));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
@@ -274,10 +277,21 @@
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            // Honeypot check - bots fill hidden fields
+            const honeypot = contactForm.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value) {
+                return; // Bot detected, silently reject
+            }
 
-            // For now, show a success message
+            // Basic client-side sanitization
+            const nome = contactForm.querySelector('#nome').value.trim();
+            const email = contactForm.querySelector('#email').value.trim();
+            const mensagem = contactForm.querySelector('#mensagem').value.trim();
+
+            if (!nome || !email || !mensagem) return;
+            if (nome.length > 100 || email.length > 254 || mensagem.length > 2000) return;
+
+            // Show success message (backend integration needed for actual sending)
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.querySelector('.btn-text').textContent;
             btn.querySelector('.btn-text').textContent = 'Mensagem Enviada!';
