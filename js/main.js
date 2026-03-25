@@ -30,7 +30,7 @@
     window.addEventListener('load', () => {
         setTimeout(() => {
             document.getElementById('preloader').classList.add('loaded');
-        }, 2200);
+        }, 800);
     });
 
     // ---- Custom Cursor ----
@@ -86,9 +86,12 @@
 
     // Mobile toggle
     navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
+        const isOpen = navToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+        mobileMenu.setAttribute('aria-hidden', !isOpen);
     });
 
     // Close mobile menu on link click
@@ -97,6 +100,9 @@
             navToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.classList.remove('no-scroll');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+            mobileMenu.setAttribute('aria-hidden', 'true');
         });
     });
 

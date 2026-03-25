@@ -35,9 +35,15 @@ RedirectMatch 404 /\.git
     </IfModule>
 </FilesMatch>
 
-# Force HTTPS
+# Force HTTPS + Canonicalize www to non-www
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+    # Force HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
@@ -59,5 +65,5 @@ RedirectMatch 404 /\.git
 </IfModule>
 
 # Custom error pages
-ErrorDocument 404 /index.html
-ErrorDocument 403 /index.html
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
