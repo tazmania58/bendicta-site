@@ -1423,6 +1423,29 @@ a.contato-value:hover {
     opacity: 0.6;
 }
 
+.footer-dev {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    opacity: 0.5;
+    transition: opacity var(--transition-fast);
+}
+
+.footer-dev:hover {
+    opacity: 0.8;
+}
+
+.footer-dev a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.footer-dev a:hover {
+    color: var(--gold-light);
+}
+
 /* ---- AGE GATE ---- */
 .age-gate {
     position: fixed;
